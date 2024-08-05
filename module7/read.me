@@ -1,0 +1,95 @@
+Python Algorithms and Performance Measurement
+This repository contains Python implementations for several algorithms and their performance measurements.
+The following functionalities are included:
+
+Fibonacci Sequence Computation:
+Recursive and iterative implementations of the Fibonacci sequence.
+Performance measurement for both implementations.
+
+List Reversal:
+Recursive implementation to reverse a list.
+
+Binary Search:
+Recursive implementation of binary search on a sorted list.
+
+
+Functions:
+fibonacci_recursive(n):
+Computes the n-th Fibonacci number using a recursive approach.
+
+Parameters:
+n (int): The index of the Fibonacci number to compute.
+
+Returns:
+The n-th Fibonacci number.
+
+
+fibonacci_iterative(n):
+Computes the n-th Fibonacci number using an iterative approach.
+
+Parameters:
+n (int): The index of the Fibonacci number to compute.
+
+Returns:
+The n-th Fibonacci number.
+
+
+reverse_list(lst):
+Reverses a list using recursion.
+
+Parameters:
+lst (list): The list to reverse.
+
+Returns:
+A new list that is the reverse of lst.
+
+
+binary_search_recursive(arr, target, start, end):
+Performs a recursive binary search on a sorted list to find the index of the target element.
+
+Parameters:
+arr (list): The sorted list to search within.
+target (int): The value to find.
+start (int): The starting index of the search range.
+end (int): The ending index of the search range.
+
+Returns:
+The index of target if found, otherwise -1.
+
+
+binary_search(arr, target):
+Wrapper function for binary_search_recursive with initial parameters.
+
+Parameters:
+arr (list): The sorted list to search within.
+target (int): The value to find.
+
+Returns:
+The index of target if found, otherwise -1.
+
+
+Performance Measurement:
+The measure_time function measures and prints the execution time of the Fibonacci computations (both recursive and
+iterative) for different values of n (10, 15, and 20). Times are measured using the timeit module.
+
+
+Notes:
+Ensure that the list passed to binary_search is sorted.
+The timing results are measured for 1000 executions of each function.
+
+How to run:
+python recursion.py
+
+
+Example Output:
+n = 10:
+  Recursive time: 5.075100 ms
+  Iterative time: 0.249200 ms
+n = 15:
+  Recursive time: 56.234100 ms
+  Iterative time: 0.350400 ms
+n = 20:
+  Recursive time: 655.543200 ms
+  Iterative time: 0.444100 ms
+Reversed list: [5, 4, 3, 2, 1]
+Element found at index 3

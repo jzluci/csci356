@@ -1,0 +1,64 @@
+Fraction Class
+
+Overview
+The Fraction class represents mathematical fractions and supports basic operations such as addition and equality
+comparisons. It maintains fractions in their lowest terms and allows addition with both fractions and integers,
+regardless of their position in the expression.
+
+Features
+Fraction Initialization: Initializes a fraction and reduces it to its lowest terms.
+Addition: Supports addition of two fractions and addition of a fraction with an integer, in both orders
+(Fraction + int and int + Fraction).
+Equality Comparison: Compares two fractions or a fraction with an integer to determine equality.
+String Representation: Provides a string representation of the fraction in the form numerator/denominator.
+Getter Methods: Accessors for numerator and denominator.
+
+Methods
+__init__(self, top, bottom)
+Initializes the fraction with a numerator (top) and a denominator (bottom). Reduces the fraction to its lowest terms.
+
+__str__(self)
+Returns a string representation of the fraction in numerator/denominator format.
+
+@staticmethod gcd(m, n)
+Computes the greatest common divisor (GCD) of two integers using the Euclidean algorithm.
+
+get_num(self)
+Returns the numerator of the fraction.
+
+get_den(self)
+Returns the denominator of the fraction.
+
+__add__(self, other)
+Adds the current fraction with another fraction or an integer. If other is a fraction, it performs fraction addition.
+If other is an integer, it converts it to a fraction and then adds.
+
+__radd__(self, other)
+Supports addition when the Fraction instance is on the right side of the + operator and other is an integer. Converts
+the integer to a fraction and performs the addition.
+
+__eq__(self, other)
+Compares the current fraction with another fraction or an integer for equality.
+
+The provided testing code verifies the correctness of the Fraction class implementation by:
+
+Fraction Reduction:
+
+The test frac1 = Fraction(4, 8) ensures that fractions are correctly reduced to their simplest form. The expected
+output 1/2 confirms that the constructor correctly simplifies the fraction.
+Addition of Fractions:
+
+The test frac1 + frac2 checks the addition of two fractions. The result 1/1 demonstrates that the addition operation
+works correctly and that the result is simplified.
+Equality Comparison:
+
+The test frac1 == frac2 verifies that the equality comparison between fractions is accurate. The result True confirms
+that equal fractions are correctly identified as equal.
+Addition with Integers:
+
+The tests frac3 + integer and integer + frac3 validate that the class supports addition of a fraction with an integer,
+and vice versa. The results 7/2 for both operations show that the addition is correctly handled regardless of the
+operand order.
+
+These tests cover the core functionalities of the Fraction class, ensuring that fractions are properly initialized,
+reduced, added, and compared.

@@ -1,0 +1,86 @@
+# UnorderedList Implementation
+
+## Description
+
+This repository contains an implementation of a basic singly linked list in Python. The `UnorderedList` class supports
+various operations including adding, removing, searching, and appending elements. Additionally, it includes methods for
+indexing, inserting at specific positions, and popping elements from the list.
+
+## Class Definitions
+
+### `Node`
+- Represents an individual node in the list.
+- Attributes:
+  - `data`: The data stored in the node.
+  - `next`: Reference to the next node in the list.
+
+### `UnorderedList`
+- Represents the singly linked list.
+- Attributes:
+  - `head`: Reference to the first node in the list.
+  - `tail`: Reference to the last node in the list.
+  - `num_nodes`: Counter for the number of nodes in the list.
+
+### Methods
+
+- **`__init__`**: Initializes an empty list.
+- **`is_empty`**: Checks if the list is empty.
+- **`add(item)`**: Adds an item to the beginning of the list.
+- **`size()`**: Returns the number of items in the list.
+- **`search(item)`**: Searches for an item in the list and returns whether it exists.
+- **`remove(item)`**: Removes the first occurrence of an item from the list.
+- **`append(item)`**: Adds an item to the end of the list.
+- **`index(item)`**: Returns the position of an item in the list.
+- **`insert(pos, item)`**: Inserts an item at a specific position in the list.
+- **`pop(pos=None)`**: Removes and returns an item from the specified position or the last item if no position is provided.
+
+## Usage
+
+### Example Code
+
+```python
+# Example usage of UnorderedList class
+def main():
+    my_list = UnorderedList()
+
+    # Adding items to the list
+    my_list.add(31)
+    my_list.add(77)
+    my_list.add(17)
+    my_list.add(93)
+    my_list.add(26)
+    my_list.add(54)
+
+    # Print the size of the list
+    print("List size:", my_list.size())  # Expected: 6
+
+    # Search for items in the list
+    print("Is 93 in the list?", my_list.search(93))  # Expected: True
+    print("Is 100 in the list?", my_list.search(100))  # Expected: False
+
+    # Get the index of an item
+    print("Index of 93:", my_list.index(93))  # Expected: 2
+
+    # Insert item at a specific position
+    my_list.insert(2, 44)
+    print("List size after inserting 44 at position 2:", my_list.size())  # Expected: 7
+
+    # Pop the last item
+    print("Pop last item:", my_list.pop())  # Expected: 31
+
+    # Pop item at a specific position
+    print("Pop item at position 2:", my_list.pop(2))  # Expected: 44
+
+    # Remove items from the list
+    my_list.remove(54)
+    print("List size after removing 54:", my_list.size())  # Expected: 4
+
+    my_list.remove(93)
+    print("List size after removing 93:", my_list.size())  # Expected: 3
+
+    # Append an item to the end of the list
+    my_list.append(99)
+    print("List size after appending 99:", my_list.size())  # Expected: 4
+
+if __name__ == "__main__":
+    main()
