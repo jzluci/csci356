@@ -1,0 +1,59 @@
+HashTable Implementation in Python
+
+Overview
+This repository contains a custom implementation of a hash table in Python, featuring the following key functionalities:
+
+Insertion: Adding key-value pairs to the hash table with collision handling using linear probing.
+Deletion: Removing key-value pairs, with special handling to maintain the integrity of subsequent retrievals.
+Resizing: Dynamically resizing the hash table when the load factor exceeds a certain threshold, ensuring efficient storage and retrieval.
+Key Retrieval: Accessing the value associated with a given key.
+Key Existence Check: Checking if a key is present in the hash table.
+Length Calculation: Calculating the number of elements in the hash table.
+Implementation Details
+The hash table is initialized with a default size of 11. The implementation uses open addressing with linear probing to
+resolve collisions. When the load factor (number of elements divided by the table size) exceeds 0.66, the table
+automatically resizes to the next prime number greater than twice its current size.
+
+Key Methods
+put(key, data): Inserts a key-value pair into the hash table.
+get(key): Retrieves the value associated with a given key.
+__delitem__(key): Deletes a key-value pair.
+resize(): Resizes the hash table when the load factor exceeds the threshold.
+__len__(): Returns the number of elements in the hash table.
+__contains__(key): Checks if a key exists in the hash table.
+Testing
+The correctness of the implementation is verified through several test cases that cover various scenarios:
+
+Basic Operations
+
+(test_hash_table()):
+
+Tests the insertion and retrieval of key-value pairs.
+Checks for correct handling of collisions.
+Ensures that updating an existing key works as expected.
+
+Length and Existence (test_hash_table_len_contains()):
+
+Verifies that the __len__() method accurately reflects the number of elements in the table.
+Ensures that the __contains__() method correctly identifies whether a key is in the table.
+
+Deletion (test_hash_table_del()):
+
+Tests the deletion of key-value pairs.
+Verifies that subsequent retrievals still work correctly after deletion.
+
+Resizing (test_hash_table_resize()):
+
+Forces a resize by adding enough elements to exceed the load factor.
+Verifies that the table size increases as expected.
+Ensures that all existing elements are correctly rehashed and retrievable after the resize.
+
+
+Justification of Testing
+The provided test cases thoroughly validate the hash table's functionality:
+
+Insertion and Retrieval: By testing various key-value pairs, including handling collisions, the tests ensure that the basic functionality of the hash table is robust.
+Deletion: The deletion test ensures that removing elements does not break the retrieval logic, even when the deleted slot was part of a collision chain.
+Resizing: The resize test confirms that the table dynamically grows and that all elements are correctly repositioned, ensuring no data loss or retrieval errors.
+Edge Cases: The tests also cover edge cases such as updating an existing key, handling collisions, and checking for the presence of keys.
+Overall, the testing strategy is designed to comprehensively cover the key functionalities of the hash table, ensuring that the implementation is both correct and efficient.
